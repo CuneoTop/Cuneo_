@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="en" theme="White"><head>
+        <meta charset="utf-8">
+        <title>@Khai</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="files/css/main.css">
+        <link href="files/css/remixicon.css" rel="stylesheet">
+        <link href="" rel="stylesheet">
+        <script src="files/js/jquery.min.js"></script>
+        <link href="css/animate.css" rel="stylesheet">
+        <script src="files/js/script.js" data-site="IHGLANPG" defer=""></script>
+        <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+    <style>
+          @keyframes sparkle {
+            0% {
+              background-image: url(resources/sparkle_white.gif);
+            }
+        
+            100% {
+              background-image: url(resources/sparkle_white.gif);
+            }
+          }
+        
+          .sparkle-text {
+            font-family: 'Montserrat';
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+            animation: sparkle 3s linear infinite;
+          }
+        
+          @font-face {
+            font-family: 'Montserrat';
+            src: url('files/ais/fonts/MontserratSemiBold.woff2') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+          }
+        
+          .bg-main {
+            --tw-bg-opacity: .5;
+            background-color: rgba(0, 0, 0, 0.5);
+          }
+        
+          .biolink::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: transparent;
+            background-image: url('files/resources/nigga.gif');
+            background-size: cover;
+            mix-blend-mode: multiply;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 1;
+          }
+        </style><script>
+        var TxtType = function(el, toRotate, period) {
+          this.toRotate = toRotate;
+          this.el = el;
+          this.loopNum = 0;
+          this.period = parseInt(period, 10) || 2000;
+          this.txt = "";
+          this.tick();
+          this.isDeleting = false;
+        };
+        TxtType.prototype.tick = function() {
+          var i = this.loopNum % this.toRotate.length;
+          var fullTxt = this.toRotate[i];
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
+          this.el.innerHTML = '<span class = "wrap" >' + this.txt + "</span>";
+          var that = this;
+          var delta = 200 - Math.random() * 100;
+          if (this.isDeleting) {
+            delta /= 2;
+          }
+          if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === "") {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
+          setTimeout(function() {
+            that.tick();
+          }, delta);
+        };
+        window.onload = function() {
+          var elements = document.getElementsByClassName("typewrite");
+          for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute("data-type");
+            var period = elements[i].getAttribute("data-period");
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+          }
+          // INJECT CSS
+          var css = document.createElement("style");
+          css.type = "text/css";
+          css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+          document.body.appendChild(css);
+        };
+          </script></head>
+        
+
+    
+    <body class="k0none">
+        <style>
+        .max-w-\[1100px\] {
+          width: 500px
+        }
+        </style>
+        <main>
+            <div class="fixed w-full h-full">
+                <div class="fixed w-full h-full">
+                    <img id="backgroundImage" style="object-fit: cover; width: 100%; height: 100%; filter: brightness(10%);" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmEwMnJ3amFmazZnYnF3Z3BqcGw1eHdobDA3MmszY2U3bGVraHdyZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QCXp92wXQjiec/giphy.webp" alt="Background Image">
+            </div>
+            <style>
+          .click_anywhere {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+            </style>
+            <div class="clickanywhere premium_border" id="clickanywhere">
+                <div class="click_body" style="height:100%;width:100%;">
+                    <div class="click_anywhere">
+                        <h4 style="color:white;font-size:20pt;">click anywhere</h4>
+                    </div>
+                </div>
+            </div>
+            <script>
+          $(document).ready(function() {
+                var audio = document.getElementById("audio");
+                audio.volume = 0.2;
+
+                $(document.body).click(function() {
+                    $(".clickanywhere").fadeOut(1000);
+                    $(".biolink").fadeIn(1000);
+                    audio.play();
+                });
+
+                $('#volumeButton').click(function() {
+                    if (audio.volume === 0) {
+                        audio.volume = 1;
+                        $('#volumeButton').html('<i class="ri-volume-up-line"></i>');
+                    } else {
+                        audio.volume = 0;
+                        $('#volumeButton').html('<i class="ri-volume-mute-line"></i>');
+                    }
+                });
+            });
+            </script>
+            <audio id="audio" loop="">
+                <source id="audio" src="files/resources/bgsong.mp3" type="audio/mpeg">
+                <source id="audio" src="files/resources/bgsong.mp3" type="audio/ogg">
+            </audio>
+            <script>
+          $(document).ready(function() {
+            var iframe = document.getElementById('spotifyembed');
+            var audio = document.getElementById("audio")
+
+            iframe.contentWindow.postMessage('startListening', '*');
+
+            window.addEventListener('message', function(event) {
+              let data = event.data;
+              if (event.data.type === 'playback_update' && event.data.payload) {
+                if (!event.data.payload.isPaused && !audio.paused) {
+                  $('audio').trigger('pause');
+                } else {
+                  $('audio').trigger('play');
+                }
+              }
+            });
+          });
+            </script>
+            <style>
+        @font-face {
+            font-family: 'conthrax-sb';
+            src: url('conthrax-sb.otf') format('truetype');
+        }
+        .bg-main {
+          --tw-bg-opacity: 1;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+          </style>
+            <div id="biolink" class="biolink tilt-container" style="display:none;height:100%;width:100%;">
+                <div class="relative w-full h-full px-4 py-16 table">
+                    <div class="table-cell align-middle text-center">
+                        <div class="bg-main rounded-md shadow-4xl w-full mx-auto card animate-slide-up not-last-child:mb-12 max-w-[1100px] mt-14" style="backdrop-filter: blur(8.8px);">
+                            <div class="p-10">
+                                <div class="not-last-child:mb-8">
+                                    <div class="-mt-[85px]">
+                                        <img class="w-44 h-44 rounded-full mx-auto shadow-avatar" src="files/resources/Icons.jpg" alt="Image" draggable="false">
+                                    </div>
+                                </div>
+                                <div class="not-last-child:mb-8">
+                                    <div class="flex justify-center items-center space-x-2">
+                                        
+                                        
+                                        <h2 class="text-[20px] text-white font-bold sparkle-text glow-text "><img src="" alt="">Khai</h2>
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <div class="not-last-child:mb-8">
+                                    <div class="mx-auto max-w-[750px]">
+                                        <p>
+                                          <span class="typewrite" data-period="2000" data-type="[&quot;Fkkkk yaa.......&quot;]" style="color: white; opacity: 0.8;">
+                                            <span class="wrap"></span>
+                                          </span>
+                                          </p>
+                                    </div>
+                                </div>
+                                <script src="files/js/vanilla-tilt.js"></script>
+                                <script>
+                                  document.addEventListener("DOMContentLoaded", function() {
+                                      VanillaTilt.init(document.getElementById("biolink"), {
+                                          max: 10,
+                                          speed: 150,
+                                      });
+                                  });
+                              </script>
+                                <div class="flex justify-center items-center space-x-2">
+                                    <div style="text-align: center;">
+                                        <a href="https://discord.com/users/910934583741120573" target="_blank">
+                                            <img src="https://lanyard.cnrad.dev/api/910934583741120573?theme=dark&amp;bg=00000000&amp;hideDiscrim=true&amp;" style="width: 300px;">
+                                        </a>
+                                        <div class="flex items-center justify-center gap-2[10px] rounded-[48.6px] border-[1.5px] border-[#ffffff0d] bg-[#ffffff0d] p-2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="1w-full mx-auto card animate-slide-up not-last-child:mb-12 max-w-[1100px]">
+                            <center>
+                                <div class="1w-full mx-auto card animate-slide-up not-last-child:mb-12 max-w-[1100px] items-center justify-center">
+                                    <div class="!p-0" style="max-width:1000px"></div>
+                                </div>
+                            </center>
+                           <div class="!p-0">
+    <div class="flex flex-wrap justify-between gap-6">
+        
+
+        <!-- Spotify Link -->
+        <a href="https://open.spotify.com/user/hzh9vom5ku43c4npeaf2cmlms?si=jX6UiulJT8mIyowGm3YMoA" target="_blank" rel="noopener noreferrer nofollow" title="khai" class="bg-main rounded-xl flex-[100%] sm:flex-[45%] animate-slide-up shadow-4xl p-3 button" style="will-change: opacity, transform">
+            <div class="flex items-center justify-between space-x-6">
+                <span class="bg-secondary rounded-xl aspect-square h-16 p-3 flex items-center justify-center">
+                    <img class="drop-shadow-discord" src="files/fonts/spotify.svg" alt="Spotify">
+                </span>
+                <h2 class="w-full text-left text-grey">
+                    Spotify
+                </h2>
+                <span class="w-20" style="margin-left: 46px;">
+                    <img src="files/resources/link-button-arrow.png" style="width: 14px;" class="link-arrows" alt="Link Arrow">
+                </span>
+            </div>
+        </a>
+
+      
+
+                          
+            
+            <script>
+      function playclip() {
+        if (navigator.appName == "Microsoft Internet Explorer" && (navigator.appVersion.indexOf("MSIE 7") != -1) || (navigator.appVersion.indexOf("MSIE 8") != -1)) {
+          if (document.all) {
+            document.all.sound.src = "song.html";
+          }
+        } else {
+          {
+            var audio = document.getElementsByTagName("audio");
+            if (audio.length > 0) audio[0].play();
+            var video = document.getElementsByTagName("video");
+            if (video.length > 0) {
+              video = video[0];
+              video.removeAttribute('hidden');
+              video.play();
+            }
+          }
+        }
+      }
+
+      $('.biolink').on('animationstart', function(event) {
+        console.log(event)
+        if (event.originalEvent.animationName === 'slide-up') {
+          playclip();
+        }
+      });
+      
+      var video = document.getElementById("backgroundVideo");
+
+      video.pause();
+
+
+    video.addEventListener("click", function() {
+      if (video.paused || video.ended) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+
+    
+      var _old = jQuery.Event.prototype.stopPropagation;
+      jQuery.Event.prototype.stopPropagation = function() {
+        this.target.nodeName !== 'SPAN' && _old.apply(this, arguments);
+      };
+
+            </script>
+            <script>(function(){var js = "window['__CF$cv$params']={r:'7d52aa4e6913bc49',m:'4ooPGDwaeLT8qZBDvl3AVvYS8byu3n5V1OCfXOk6WTA-1686411128-0-AadoCuATyL+p5RBzyC5nvKjRXvI8boEmdp+y/mdTpzGm'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../cdn-cgi/challenge-platform/h/b/scripts/jsd/5da7637f/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script>
+        
+    
+</div></main><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><style type="text/css">.typewrite > .wrap { border-right: 0.08em solid #fff}</style></body></html>
